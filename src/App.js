@@ -28,6 +28,7 @@ const Icons = styled(Box)(({theme})=>({
 
 function App() {
   const result = useLoaderData([]);
+  const [ren, setRen] = useState([])
   const [filtered, setFiltered] = useState([]);
   const[open,setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -35,6 +36,7 @@ function App() {
   
    useEffect(()=>{ 
     setFiltered(result)
+    setRen(result)
   },[]) 
   return (
     
@@ -86,7 +88,7 @@ function App() {
       </Menu>
       </AppBar>
       <div className="App">
-      <Filter data={result} setFiltered={setFiltered} active={active} setActive={setActive} query={query}/>
+      <Filter data={ren} setFiltered={setFiltered} active={active} setActive={setActive} query={query}/>
       <motion.div layout className="popular-item">
           <AnimatePresence>
           {filtered.map((product)=>{
