@@ -14,7 +14,7 @@ const Product = ({product}) => {
           <h2>{ product.Product_Name }</h2>
         </div>
         <div className="img">
-          <img src={"https://creator.zoho.eu" + product.Product_Images[0].display_value} alt=""/>
+          <img src={product.Product_Images[0]} alt=""/>
           <p>{ product.Category.display_value }</p>       
         </div>
         
